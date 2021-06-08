@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import styles from './App.module.css';
 import { useForm } from 'react-hook-form';
 import { calculateAxleLoad } from '../services/calcService';
+import './App.css';
 
 export default function App() {
   let result = {};
@@ -33,7 +33,7 @@ export default function App() {
     reset();
     // Hide balance displays
     // 500ms timeout to enable scroll to work properly
-    setTimeout(function(){ 
+    setTimeout(function () {
       setShowBalance(false);
     }, 10);
   };
@@ -45,124 +45,150 @@ export default function App() {
   };
 
   return (
-    <main className={styles.main}>
-      <section className={styles.car__image} ref={ showInputRef }>
+    <main>
+      <section className='car__image' ref={showInputRef}>
         <img src='./rc-car.svg' alt='RC car' />
       </section>
       <section>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h2 className={styles.section__title}>Front</h2>
-          <div className={styles.grid__container}>
-            <div className={styles.input__container}>
-              <label className={styles.label}>Front left</label>
+          <h2 className='section__title'>Front</h2>
+          <div className='grid__container'>
+            <div className='input__container'>
+              <label className='label'>Front left</label>
               <input
                 autoFocus
-                type='number' 
-                step='any' 
-                inputMode='decimal' 
+                type='number'
+                step='any'
+                inputMode='decimal'
                 pattern='\d*'
-                className={styles.input__value}
+                className='input__value'
                 placeholder='FL'
                 {...register('frontLeft', { required: true })}
               />
               {errors.frontLeft && 'Front Left value is required!'}
             </div>
-            <div className={styles.input__container}>
-              <label className={styles.label}>Front right</label>
+            <div className='input__container'>
+              <label className='label'>Front right</label>
               <input
-                type='number' 
-                step='any' 
-                inputMode='decimal' 
+                type='number'
+                step='any'
+                inputMode='decimal'
                 pattern='\d*'
-                className={styles.input__value}
+                className='input__value'
                 placeholder='FR'
                 {...register('frontRight', { required: true })}
               />
               {errors.frontRight && 'Front Right value is required!'}
             </div>
           </div>
-          <h2 className={styles.section__title}>Rear</h2>
-          <div className={styles.grid__container}>
-            <div className={styles.input__container}>
-              <label className={styles.label}>Rear left</label>
+          <h2 className='section__title'>Rear</h2>
+          <div className='grid__container'>
+            <div className='input__container'>
+              <label className='label'>Rear left</label>
               <input
-                type='number' 
-                step='any' 
-                inputMode='decimal' 
+                type='number'
+                step='any'
+                inputMode='decimal'
                 pattern='\d*'
-                className={styles.input__value}
+                className='input__value'
                 placeholder='RL'
                 {...register('rearLeft', { required: true })}
               />
               {errors.rearLeft && 'Rear Left value is required!'}
             </div>
-            <div className={styles.input__container}>
-              <label className={styles.label}>Front right</label>
+            <div className='input__container'>
+              <label className='label'>Front right</label>
               <input
-                type='number' 
-                step='any' 
-                inputMode='decimal' 
+                type='number'
+                step='any'
+                inputMode='decimal'
                 pattern='\d*'
-                className={styles.input__value}
+                className='input__value'
                 placeholder='RR'
                 {...register('rearRight', { required: true })}
               />
               {errors.rearRight && 'Rear Right value is required!'}
             </div>
           </div>
-          <button type="submit">Calculate</button>
+          <button type='submit'>Calculate</button>
         </form>
       </section>
 
-      { showBalance &&
-      <section ref={ showBalanceRef }>
-        <section className={styles.total__weight}>
-          <h5>total weight</h5>
-          <h2>{ balance.totalWeight }g</h2>
+      {showBalance && (
+        <section ref={showBalanceRef}>
+          <section className='total__weight'>
+            <h5>total weight</h5>
+            <h2>{balance.totalWeight}g</h2>
+          </section>
+          <section className='weight__balance'>
+            <h2 className='section__title'>weight balance</h2>
+            <div className='grid__container'>
+              <div className='input__container'>
+                <label className='label'>Front</label>
+                <h4 className='weight__balance__value'>
+                  {balance.frontBalance}g
+                </h4>
+                <h2 className='weight__balance__percentage'>
+                  {balance.frontBalancePCT}%
+                </h2>
+              </div>
+              <div className='input__container'>
+                <label className='label'>rear</label>
+                <h4 className='weight__balance__value'>
+                  {balance.rearBalance}g
+                </h4>
+                <h2 className='weight__balance__percentage'>
+                  {balance.rearBalancePCT}%
+                </h2>
+              </div>
+              <div className='input__container'>
+                <label className='label'>left</label>
+                <h4 className='weight__balance__value'>
+                  {balance.leftBalance}g
+                </h4>
+                <h2 className='weight__balance__percentage'>
+                  {balance.leftBalancePCT}%
+                </h2>
+              </div>
+              <div className='input__container'>
+                <label className='label'>right</label>
+                <h4 className='weight__balance__value'>
+                  {balance.rightBalance}g
+                </h4>
+                <h2 className='weight__balance__percentage'>
+                  {balance.rightBalancePCT}%
+                </h2>
+              </div>
+            </div>
+          </section>
+          <section className='diagonal__balance'>
+            <h2 className='section__title'>diagonal balance</h2>
+            <div className='grid__container'>
+              <div className='input__container'>
+                <label className='label'>FL + RR</label>
+                <h4 className='weight__balance__value'>
+                  {balance.flrrBalance}g
+                </h4>
+                <h2 className='weight__balance__percentage'>
+                  {balance.flrrBalancePCT}%
+                </h2>
+              </div>
+              <div className='input__container'>
+                <label className='label'>FR + RL</label>
+                <h4 className='weight__balance__value'>
+                  {balance.frrlBalance}g
+                </h4>
+                <h2 className='weight__balance__percentage'>
+                  {balance.frrlBalancePCT}%
+                </h2>
+              </div>
+            </div>
+          </section>
+          <button type='button' onClick={() => resetValues()}>
+            Reset Values
+          </button>
         </section>
-        <section className={styles.weight__balance}>
-          <h2 className={styles.section__title}>weight balance</h2>
-          <div className={styles.grid__container}>
-            <div className={styles.input__container}>
-              <label className={styles.label}>Front</label>
-              <h4 className={styles.weight__balance__value}>{ balance.frontBalance }g</h4>
-              <h2 className={styles.weight__balance__percentage}>{ balance.frontBalancePCT }%</h2>
-            </div>
-            <div className={styles.input__container}>
-              <label className={styles.label}>rear</label>
-              <h4 className={styles.weight__balance__value}>{ balance.rearBalance }g</h4>
-              <h2 className={styles.weight__balance__percentage}>{ balance.rearBalancePCT }%</h2>
-            </div>
-            <div className={styles.input__container}>
-              <label className={styles.label}>left</label>
-              <h4 className={styles.weight__balance__value}>{ balance.leftBalance }g</h4>
-              <h2 className={styles.weight__balance__percentage}>{ balance.leftBalancePCT }%</h2>
-            </div>
-            <div className={styles.input__container}>
-              <label className={styles.label}>right</label>
-              <h4 className={styles.weight__balance__value}>{ balance.rightBalance }g</h4>
-              <h2 className={styles.weight__balance__percentage}>{ balance.rightBalancePCT }%</h2>
-            </div>
-          </div>
-        </section>
-        <section className={styles.diagonal__balance}>
-          <h2 className={styles.section__title}>diagonal balance</h2>
-          <div className={styles.grid__container}>
-            <div className={styles.input__container}>
-              <label className={styles.label}>FL + RR</label>
-              <h4 className={styles.weight__balance__value}>{ balance.flrrBalance }g</h4>
-              <h2 className={styles.weight__balance__percentage}>{ balance.flrrBalancePCT }%</h2>
-            </div>
-            <div className={styles.input__container}>
-              <label className={styles.label}>FR + RL</label>
-              <h4 className={styles.weight__balance__value}>{ balance.frrlBalance }g</h4>
-              <h2 className={styles.weight__balance__percentage}>{ balance.frrlBalancePCT }%</h2>
-            </div>
-          </div>
-        </section>
-        <button type="button" onClick={() => resetValues()}>Reset Values</button>
-      </section>
-      }
+      )}
     </main>
   );
 }
