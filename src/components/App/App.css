@@ -83,4 +83,47 @@ main > section {
   color: white;
 }
 
-/* OLD BELOW */
+.error-msg {
+  font-size: 0.8125rem;
+  color: red;
+  line-height: 1.2rem;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  border-radius: 4px;
+}
+
+.btn.full-width {
+  width: 100%;
+}
+
+.btn.submit {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  background: #3e92cc;
+  color: white;
+}
+
+.btn.reset {
+  border-radius: 4px;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background: #550317;
+  color: #fad1db;
+}

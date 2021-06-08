@@ -65,7 +65,9 @@ export default function App() {
                 placeholder='FL'
                 {...register('frontLeft', { required: true })}
               />
-              {errors.frontLeft && 'Front Left value is required!'}
+              {errors.frontLeft && (
+                <p className='error-msg'>Front Left value is required!</p>
+              )}
             </div>
             <div className='input__container'>
               <label className='label'>Front right</label>
@@ -78,7 +80,9 @@ export default function App() {
                 placeholder='FR'
                 {...register('frontRight', { required: true })}
               />
-              {errors.frontRight && 'Front Right value is required!'}
+              {errors.frontRight && (
+                <p className='error-msg'>Front Right value is required!</p>
+              )}
             </div>
           </div>
           <h2 className='section__title'>Rear</h2>
@@ -94,7 +98,9 @@ export default function App() {
                 placeholder='RL'
                 {...register('rearLeft', { required: true })}
               />
-              {errors.rearLeft && 'Rear Left value is required!'}
+              {errors.rearLeft && (
+                <p className='error-msg'>Rear Left value is required!</p>
+              )}
             </div>
             <div className='input__container'>
               <label className='label'>Front right</label>
@@ -107,10 +113,14 @@ export default function App() {
                 placeholder='RR'
                 {...register('rearRight', { required: true })}
               />
-              {errors.rearRight && 'Rear Right value is required!'}
+              {errors.rearRight && (
+                <p className='error-msg'>Rear Right value is required!</p>
+              )}
             </div>
           </div>
-          <button type='submit'>Calculate</button>
+          <button className='btn submit full-width' type='submit'>
+            Calculate
+          </button>
         </form>
       </section>
 
@@ -184,7 +194,11 @@ export default function App() {
               </div>
             </div>
           </section>
-          <button type='button' onClick={() => resetValues()}>
+          <button
+            className='btn reset full-width'
+            type='button'
+            onClick={() => resetValues()}
+          >
             Reset Values
           </button>
         </section>
