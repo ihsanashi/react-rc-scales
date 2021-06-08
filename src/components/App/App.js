@@ -56,6 +56,10 @@ export default function App() {
             <div className={styles.input__container}>
               <label className={styles.label}>Front left</label>
               <input
+                type='number' 
+                step='any' 
+                inputMode='decimal' 
+                pattern='\d*'
                 className={styles.input__value}
                 placeholder='FL'
                 {...register('frontLeft', { required: true })}
@@ -65,6 +69,10 @@ export default function App() {
             <div className={styles.input__container}>
               <label className={styles.label}>Front right</label>
               <input
+                type='number' 
+                step='any' 
+                inputMode='decimal' 
+                pattern='\d*'
                 className={styles.input__value}
                 placeholder='FR'
                 {...register('frontRight', { required: true })}
@@ -77,6 +85,10 @@ export default function App() {
             <div className={styles.input__container}>
               <label className={styles.label}>Rear left</label>
               <input
+                type='number' 
+                step='any' 
+                inputMode='decimal' 
+                pattern='\d*'
                 className={styles.input__value}
                 placeholder='RL'
                 {...register('rearLeft', { required: true })}
@@ -86,6 +98,10 @@ export default function App() {
             <div className={styles.input__container}>
               <label className={styles.label}>Front right</label>
               <input
+                type='number' 
+                step='any' 
+                inputMode='decimal' 
+                pattern='\d*'
                 className={styles.input__value}
                 placeholder='RR'
                 {...register('rearRight', { required: true })}
