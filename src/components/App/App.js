@@ -56,6 +56,7 @@ export default function App() {
             <div className={styles.input__container}>
               <label className={styles.label}>Front left</label>
               <input
+                autoFocus
                 type='number' 
                 step='any' 
                 inputMode='decimal' 
