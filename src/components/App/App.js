@@ -110,7 +110,7 @@ export default function App() {
               {errors.rearRight && 'Rear Right value is required!'}
             </div>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Calculate</button>
         </form>
       </section>
 
