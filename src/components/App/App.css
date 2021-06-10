@@ -14,12 +14,6 @@ main > section {
   font-family: 'Share Tech Mono', monospace;
 }
 
-.car__image img {
-  display: block;
-  width: 70%;
-  margin: 0 auto;
-}
-
 .section__title {
   font-size: 1.25rem;
   font-weight: 500;
@@ -27,19 +21,57 @@ main > section {
   text-align: center;
   letter-spacing: 0.1rem;
   color: #efefef;
-  margin: 1.25rem 0;
+  margin: 1.25rem 0 0.75rem;
 }
 
-.grid__container {
+.top__inputs .grid__container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 0.5rem 1.25rem;
   justify-items: center;
-  text-align: center;
 }
 
-input {
-  text-align: center;
+.front__title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.front__left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.car__body {
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car__body img {
+  height: 250px;
+}
+
+.front__right {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.rear__left {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+.rear__title {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.rear__right {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
 }
 
 .input__container {
@@ -50,8 +82,8 @@ input {
   margin: 0.625rem 0;
   color: white;
   border: 1px solid #2c3ea1;
-  max-width: 160px;
-  font-size: 1.375rem;
+  max-width: 80px;
+  font-size: 1.25rem;
   border-radius: 4px;
   padding: 0.625rem;
 }
@@ -80,6 +112,15 @@ input {
 
 .weight__balance {
   margin: 2rem 0 1.25rem;
+  text-align: center;
+}
+
+.weight__balance .grid__container,
+.diagonal__balance .grid__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.25rem;
+  justify-items: center;
 }
 
 .weight__balance__value {
@@ -93,10 +134,15 @@ input {
   color: white;
 }
 
+.diagonal__balance {
+  text-align: center;
+}
+
 .error-msg {
   font-size: 0.8125rem;
   color: red;
   line-height: 1.2rem;
+  display: inline-block;
 }
 
 button {

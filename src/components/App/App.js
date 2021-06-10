@@ -46,14 +46,11 @@ export default function App() {
 
   return (
     <main>
-      <section className='car__image' ref={showInputRef}>
-        <img src='./rc-car.svg' alt='RC car' />
-      </section>
-      <section>
+      <section className='top__inputs' ref={showInputRef}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h2 className='section__title'>Front</h2>
           <div className='grid__container'>
-            <div className='input__container'>
+            <h2 className='section__title front__title'>Front</h2>
+            <div className='input__container front__left'>
               <label className='label'>Front left</label>
               <input
                 autoFocus
@@ -66,10 +63,15 @@ export default function App() {
                 {...register('frontLeft', { required: true })}
               />
               {errors.frontLeft && (
-                <p className='error-msg'>Front Left value is required!</p>
+                <small className='error-msg'>
+                  Front Left value is required!
+                </small>
               )}
             </div>
-            <div className='input__container'>
+            <div className='car__body'>
+              <img src='./rc-car.svg' alt='RC car' />
+            </div>
+            <div className='input__container front__right'>
               <label className='label'>Front right</label>
               <input
                 type='number'
@@ -81,13 +83,12 @@ export default function App() {
                 {...register('frontRight', { required: true })}
               />
               {errors.frontRight && (
-                <p className='error-msg'>Front Right value is required!</p>
+                <small className='error-msg'>
+                  Front Right value is required!
+                </small>
               )}
             </div>
-          </div>
-          <h2 className='section__title'>Rear</h2>
-          <div className='grid__container'>
-            <div className='input__container'>
+            <div className='input__container rear__left'>
               <label className='label'>Rear left</label>
               <input
                 type='number'
@@ -99,10 +100,13 @@ export default function App() {
                 {...register('rearLeft', { required: true })}
               />
               {errors.rearLeft && (
-                <p className='error-msg'>Rear Left value is required!</p>
+                <small className='error-msg'>
+                  Rear Left value is required!
+                </small>
               )}
             </div>
-            <div className='input__container'>
+            <h2 className='section__title rear__title'>Rear</h2>
+            <div className='input__container rear__right'>
               <label className='label'>Front right</label>
               <input
                 type='number'
@@ -114,7 +118,9 @@ export default function App() {
                 {...register('rearRight', { required: true })}
               />
               {errors.rearRight && (
-                <p className='error-msg'>Rear Right value is required!</p>
+                <small className='error-msg'>
+                  Rear Right value is required!
+                </small>
               )}
             </div>
           </div>
