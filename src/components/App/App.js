@@ -107,7 +107,7 @@ export default function App() {
             </div>
             <h2 className='section__title rear__title'>Rear</h2>
             <div className='input__container rear__right'>
-              <label className='label'>Front right</label>
+              <label className='label'>Rear right</label>
               <input
                 type='number'
                 step='any'
