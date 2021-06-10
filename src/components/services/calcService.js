@@ -4,7 +4,7 @@ const toFixed = (value, decPoint = 0) => value.toFixed(decPoint);
 
 // Parse all weight as float for calculation
 const parseFloatWeight = (weightDataObj) => {
-  const parsedWeightObj = Object.fromEntries(Object.entries(weightDataObj).map(([a, b]) => [a, parseFloat(b)]));
+  const parsedWeightObj = Object.fromEntries(Object.entries(weightDataObj).map(([key, value]) => [key, parseFloat(value)]));
   return parsedWeightObj;
 }
 
