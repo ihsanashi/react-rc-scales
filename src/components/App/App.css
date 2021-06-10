@@ -74,8 +74,13 @@ main > section {
   grid-row: 5 / 6;
 }
 
+input {
+  text-align: center;
+}
+
 .input__container {
   margin: 0.5rem 0;
+  text-align: center;
 }
 
 .input__value {
@@ -89,7 +94,8 @@ main > section {
 }
 
 .input__value:focus {
-  border-color: #4862f7;
+  /* border-color: #4862f7; */
+  border-color: #1abc9c;
 }
 
 .label,
