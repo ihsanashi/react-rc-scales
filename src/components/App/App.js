@@ -35,7 +35,7 @@ export default function App() {
     // 500ms timeout to enable scroll to work properly
     setTimeout(function () {
       setShowBalance(false);
-    }, 10);
+    }, 200);
   };
 
   const scrollTo = (ref) => {
