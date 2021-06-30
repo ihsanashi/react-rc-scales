@@ -1,3 +1,22 @@
+- [Introduction](#introduction)
+- [My role](#my-role)
+- [Screenshots/Gifs](#screenshotsgifs)
+- [Live site](#live-site)
+  - [Inspiration](#inspiration)
+  - [Demo](#demo)
+- [Available Scripts](#available-scripts)
+  - [`yarn start`](#yarn-start)
+  - [`yarn test`](#yarn-test)
+  - [`yarn build`](#yarn-build)
+  - [`yarn eject`](#yarn-eject)
+- [Learn More](#learn-more)
+  - [Code Splitting](#code-splitting)
+  - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+  - [Making a Progressive Web App](#making-a-progressive-web-app)
+  - [Advanced Configuration](#advanced-configuration)
+  - [Deployment](#deployment)
+  - [`yarn build` fails to minify](#yarn-build-fails-to-minify)
+
 ## Introduction
 
 I collaborated with my brother to build a React web app which targets users like himself - **RC car enthusiasts**. The user would enter 4 values, and the app will measure the weight balance and diagonal balance of the RC car. The inspiration behind it came from a similar app that he had discovered online, but theirs had incorporated Bluetooth-enabled scales, so the user wouldn't even need to enter the readings manually.
