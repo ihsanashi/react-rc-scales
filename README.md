@@ -1,4 +1,31 @@
-# Getting Started with Create React App
+## Introduction
+
+I collaborated with my brother to build a React web app which targets users like himself - **RC car enthusiasts**. The user would enter 4 values, and the app will measure the weight balance and diagonal balance of the RC car. The inspiration behind it came from a similar app that he had discovered online, but theirs had incorporated Bluetooth-enabled scales, so the user wouldn't even need to enter the readings manually.
+
+## My role
+
+I was mostly involved with styling the app with vanilla CSS. The layout of the car image with the 4 inputs were achived with CSS Grid. Prior to my involvement, my brother had already completed most of the app functionality. The calculation formula can be viewed in [this file](src/components/services/calcService.js).
+
+## Screenshots/Gifs
+
+![Gif](media/scales-flow.gif "Flow of the app")
+
+## Live site
+
+You can view the live site [here](https://scale.ahmadridzwan.com/).
+
+
+### Inspiration
+
+The inspiration we used to form the basis of the app
+
+![inspiration](media/inspiration.png)
+
+### Demo
+
+Here is an image on how to get the values you would need to enter inside the app, just place the scales underneath each tyre of the RC car, and the screen will display the values.
+
+![Demo](media/demo.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
