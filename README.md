@@ -26,7 +26,7 @@ I collaborated with my brother to build a React web app which targets users like
 
 ## My role
 
-I was mostly involved with styling the app with vanilla CSS. The layout of the car image with the 4 inputs were achived with CSS Grid. Prior to my involvement, my brother had already completed most of the app functionality. The calculation formula can be viewed in [this file](src/components/services/calcService.js).
+I was mostly involved with styling the app with vanilla CSS. The layout of the car image with the 4 inputs were achieved with CSS Grid. Prior to my involvement, my brother had already completed most of the app functionality. The calculation formula can be viewed in [this file](src/components/services/calcService.js).
 
 ## Screenshots/Gifs
 
